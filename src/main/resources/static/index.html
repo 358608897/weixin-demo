@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="jquery.js" >
+    </script>
+</head>
+<body>
+    <div style="margin: auto">
+        <h1>首页</h1>
+        <button onclick="loginWeixin()">登录微信</button>
+    </div>
+</body>
+    <script>
+
+        function loginWeixin() {
+            window.location.href = "weixinlogin.html";
+        }
+        function rqeWx(url) {
+            $.ajax({
+                type: "GET",
+                timeout: 10000, //超时时间设置，单位毫秒
+                url: url,
+                // data:JSON.stringify({"name":"2021"}),
+                // dataType: "json",
+                // contentType:"application/json; charset=UTF-8",
+                beforeSend: function(){
+                    // console.log("beforeSend")
+                },
+                complete: function(){
+                    // console.log("complete")
+                },
+                success:function(data) {
+                    // console.log("data")
+                    // var content = eval(data);
+
+                    console.log("content")
+                    alert("req wx："+data)
+                },
+                error:function (e) {
+
+                    console.log("error")
+                }
+            });
+        }
+    </script>
+</html>

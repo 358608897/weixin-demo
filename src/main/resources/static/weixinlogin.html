@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信登录</title>
+    <script src="jquery.js" >
+    </script>
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+</head>
+<body>
+    <div style="margin: auto">
+        <h1>请扫码登录</h1>
+        <div id="login_container"></div>
+    </div>
+</body>
+    <script>
+        $(document).ready(function(){
+            var obj = new WxLogin({
+                self_redirect:true,
+                id:"login_container",
+                appid: "wx4fd0d25b3aa2b84f",
+                scope: "snsapi_login",
+                redirect_uri: "https%3A%2F%2Fpassport.yhd.com%2Fwechat%2Fcallback.do",
+                state: "3d6be0a4035d839573b04816624a415e",
+                // style: "",
+                // href: ""
+            });
+        });
+    </script>
+</html>
